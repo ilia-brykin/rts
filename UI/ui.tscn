@@ -22,6 +22,4 @@ limit_top = 0
 script = ExtResource("1_c1n3f")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_pjiyy")
