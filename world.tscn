@@ -1,20 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://k8ftx0qfbnv5"]
+[gd_scene load_steps=6 format=3 uid="uid://k8ftx0qfbnv5"]
 
 [ext_resource type="Script" path="res://UI/Camera.gd" id="1_kjri0"]
 [ext_resource type="Script" path="res://world.gd" id="1_kstvi"]
 [ext_resource type="PackedScene" uid="uid://duvegjudp7c0u" path="res://unit/unit.tscn" id="2_7u3o2"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjiyy"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 0.490196)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_blend = true
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+[ext_resource type="PackedScene" uid="uid://dqa0sxgaqcyjp" path="res://World Objects/tree.tscn" id="4_dbqhf"]
+[ext_resource type="PackedScene" uid="uid://bg2ohhatacu6c" path="res://UI/ui.tscn" id="5_v8451"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_kstvi")
@@ -24,24 +14,26 @@ limit_left = 0
 limit_top = 0
 script = ExtResource("1_kjri0")
 
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Panel" type="Panel" parent="UI"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_pjiyy")
+[node name="UI" parent="." instance=ExtResource("5_v8451")]
 
 [node name="Units" type="Node2D" parent="."]
 
-[node name="Unit" parent="Units" groups=["units"] instance=ExtResource("2_7u3o2")]
-position = Vector2(303, 205)
+[node name="Unit" parent="Units" instance=ExtResource("2_7u3o2")]
+position = Vector2(226, 181)
 
-[node name="Unit2" parent="Units" groups=["units"] instance=ExtResource("2_7u3o2")]
-position = Vector2(275, 268)
+[node name="Unit2" parent="Units" instance=ExtResource("2_7u3o2")]
+position = Vector2(262, 71)
 
-[node name="Unit3" parent="Units" groups=["units"] instance=ExtResource("2_7u3o2")]
-position = Vector2(351, 258)
+[node name="Unit3" parent="Units" instance=ExtResource("2_7u3o2")]
+position = Vector2(109, 108)
 
-[node name="Unit4" parent="Units" groups=["units"] instance=ExtResource("2_7u3o2")]
-position = Vector2(389, 208)
+[node name="Unit4" parent="Units" instance=ExtResource("2_7u3o2")]
+position = Vector2(117, 196)
 
-[node name="Unit5" parent="Units" groups=["units"] instance=ExtResource("2_7u3o2")]
-position = Vector2(484, 265)
+[node name="Unit5" parent="Units" instance=ExtResource("2_7u3o2")]
+position = Vector2(190, 118)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Tree" parent="Objects" instance=ExtResource("4_dbqhf")]
+position = Vector2(298, 148)

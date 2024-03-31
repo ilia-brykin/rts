@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bg2ohhatacu6c"]
 
-[ext_resource type="Script" path="res://UI/Camera.gd" id="1_c1n3f"]
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_skct8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjiyy"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 0.490196)
@@ -15,11 +15,11 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
 [node name="UI" type="CanvasLayer"]
-
-[node name="Camera" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = 0
-script = ExtResource("1_c1n3f")
+script = ExtResource("1_skct8")
 
 [node name="Panel" type="Panel" parent="."]
 theme_override_styles/panel = SubResource("StyleBoxFlat_pjiyy")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0

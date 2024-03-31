@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://duvegjudp7c0u"]
+[gd_scene load_steps=8 format=3 uid="uid://duvegjudp7c0u"]
 
 [ext_resource type="Texture2D" uid="uid://cwdlhhojrafls" path="res://images/MiniWorldSprites/Characters/Champions/Arthax.png" id="1_4bww5"]
 [ext_resource type="Script" path="res://unit/unit.gd" id="1_iu8js"]
@@ -15,7 +15,45 @@ border_width_bottom = 2
 border_color = Color(0.172549, 0.537255, 0.854902, 1)
 border_blend = true
 
-[node name="Unit" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_p2st4"]
+resource_name = "Walk Down"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arthax:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_d2aq6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arthax:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r57fb"]
+_data = {
+"RESET": SubResource("Animation_d2aq6"),
+"Walk Down": SubResource("Animation_p2st4")
+}
+
+[node name="Unit" type="CharacterBody2D" groups=["units"]]
 position = Vector2(0, 1)
 script = ExtResource("1_iu8js")
 
@@ -28,11 +66,17 @@ position = Vector2(0, -8)
 texture = ExtResource("1_4bww5")
 hframes = 5
 vframes = 8
+frame = 1
 
 [node name="Box" type="Panel" parent="."]
 offset_left = -8.0
 offset_top = -15.0
 offset_right = 7.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_pb1ru")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r57fb")
+}
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
