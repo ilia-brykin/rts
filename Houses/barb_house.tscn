@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://d00i3uprabf46"]
+
+[ext_resource type="Texture2D" uid="uid://b87jyy7lt6s2e" path="res://images/MiniWorldSprites/Buildings/Wood/Barracks.png" id="1_2j7oe"]
+[ext_resource type="Script" path="res://Houses/barb_house.gd" id="1_emtpj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v11c4"]
+size = Vector2(26, 30)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pb1ru"]
+bg_color = Color(0.6, 0.6, 0.6, 0.137255)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.172549, 0.537255, 0.854902, 1)
+border_blend = true
+
+[node name="BarbHouse" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_emtpj")
+
+[node name="Barracks" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_2j7oe")
+hframes = 4
+vframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_v11c4")
+
+[node name="Selected" type="Panel" parent="."]
+offset_left = -17.0
+offset_top = -17.0
+offset_right = 17.0
+offset_bottom = 18.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pb1ru")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

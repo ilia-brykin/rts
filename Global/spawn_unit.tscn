@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://uqkeh627js8c"]
+
+[ext_resource type="Script" path="res://Global/spawn_unit.gd" id="1_b5xw0"]
+[ext_resource type="Texture2D" uid="uid://cwdlhhojrafls" path="res://images/MiniWorldSprites/Characters/Champions/Arthax.png" id="2_g4bx4"]
+
+[node name="SpawnUnit" type="Node2D"]
+position = Vector2(304, 120)
+script = ExtResource("1_b5xw0")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 360.0
+offset_bottom = 192.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 56.0
+offset_top = 24.0
+offset_right = 322.0
+offset_bottom = 47.0
+text = "Would you like to spawn this Unit?"
+metadata/_edit_use_anchors_ = true
+
+[node name="Yes" type="Button" parent="."]
+offset_left = 48.0
+offset_top = 152.0
+offset_right = 96.0
+offset_bottom = 183.0
+text = "Yes
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="No" type="Button" parent="."]
+offset_left = 296.0
+offset_top = 152.0
+offset_right = 343.0
+offset_bottom = 183.0
+text = "No
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Arthax" type="Sprite2D" parent="."]
+position = Vector2(184, 96)
+scale = Vector2(4, 4)
+texture = ExtResource("2_g4bx4")
+hframes = 5
+vframes = 8
+
+[connection signal="pressed" from="Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="No" to="." method="_on_no_pressed"]

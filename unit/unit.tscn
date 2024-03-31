@@ -53,7 +53,7 @@ _data = {
 "Walk Down": SubResource("Animation_p2st4")
 }
 
-[node name="Unit" type="CharacterBody2D" groups=["units"]]
+[node name="Unit" type="CharacterBody2D"]
 position = Vector2(0, 1)
 script = ExtResource("1_iu8js")
 

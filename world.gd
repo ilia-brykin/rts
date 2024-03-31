@@ -4,6 +4,10 @@ var units: Array = []
 
 
 func _ready():
+	get_units()
+
+
+func get_units() -> void:
 	units = get_tree().get_nodes_in_group("units")
 
 
