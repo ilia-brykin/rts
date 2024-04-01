@@ -1,6 +1,7 @@
 extends Node
 
 var Wood: int = 0
+var coin: int = 0
 var is_spawn_unit_open: bool = false
 
 @onready var spawn: PackedScene = preload("res://Global/spawn_unit.tscn")

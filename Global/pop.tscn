@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bqtv1xbxhthsd"]
+
+[ext_resource type="Script" path="res://Global/pop.gd" id="1_dla5k"]
+
+[node name="POP" type="Label"]
+offset_left = -44.0
+offset_top = -24.0
+offset_right = 43.0
+offset_bottom = -1.0
+text = "123"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_dla5k")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://k8ftx0qfbnv5"]
+[gd_scene load_steps=11 format=3 uid="uid://k8ftx0qfbnv5"]
 
 [ext_resource type="Script" path="res://UI/Camera.gd" id="1_kjri0"]
 [ext_resource type="Script" path="res://world.gd" id="1_kstvi"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dqa0sxgaqcyjp" path="res://World Objects/tree.tscn" id="4_dbqhf"]
 [ext_resource type="PackedScene" uid="uid://bg2ohhatacu6c" path="res://UI/ui.tscn" id="5_v8451"]
 [ext_resource type="PackedScene" uid="uid://d00i3uprabf46" path="res://Houses/barb_house.tscn" id="7_opf4v"]
+[ext_resource type="PackedScene" uid="uid://d2cs3miulx3rf" path="res://Houses/coin_house.tscn" id="7_oyke8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_75efq"]
 resource_name = "Grass"
@@ -51,6 +52,9 @@ position = Vector2(298, 148)
 
 [node name="Houses" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="CoinHouse" parent="Houses" instance=ExtResource("7_oyke8")]
+position = Vector2(182, 157)
 
 [node name="BarbHouse" parent="Houses" instance=ExtResource("7_opf4v")]
 position = Vector2(171, 209)
