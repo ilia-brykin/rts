@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7pnp67kw84t7"]
+
+[ext_resource type="Texture2D" uid="uid://bvvar5kmf2jhx" path="res://images/MiniWorldSprites/Buildings/Wood/Resources.png" id="1_fufge"]
+
+[node name="CoinHouseSprite" type="Sprite2D"]
+texture = ExtResource("1_fufge")
+hframes = 3
+vframes = 5
+frame = 11

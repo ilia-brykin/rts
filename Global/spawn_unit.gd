@@ -12,6 +12,8 @@ func _on_yes_pressed():
 	unit_instance.position = house_position + get_random_position()
 	units_node.add_child(unit_instance)
 	world_node.get_units()
+	var mini_map_node: SubViewport = get_tree().get_root().get_node("World/UI/MiniMap/SubViewportContainer/SubViewport")
+	mini_map_node.update_units()
 
 
 func get_random_position() -> Vector2:
