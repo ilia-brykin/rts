@@ -42,7 +42,7 @@ func _on_timer_timeout():
 func tree_chopped():
 	Game.Wood += 1
 	var mini_map_node: SubViewport = get_tree().get_root().get_node("World/UI/MiniMap/SubViewportContainer/SubViewport")
-	mini_map_node.update_trees()
+	mini_map_node.update_trees_with_timeout()
 	queue_free()
 
 

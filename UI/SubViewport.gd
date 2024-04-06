@@ -41,13 +41,27 @@ func update_camera():
 
 func update_map():
 	build_objects(houses_world_node, barrack_sprite, $Houses)
-	build_objects(resources_world_node, coin_house_sprite, $Resources)
+	update_resources()
 	build_objects(objects_world_node, tree_sprite, $Objects)
 	update_units()
 
 
+func update_resources():
+	clear_group_node($Resources)
+	build_objects(resources_world_node, coin_house_sprite, $Resources)
+
+
 func update_trees():
+	clear_group_node($Objects)
+	build_objects(objects_world_node, tree_sprite, $Objects)
+
+
+func update_trees_with_timeout():
 	$TreeTimer.start()
+
+
+func _on_tree_timer_timeout():
+	update_trees()
 
 
 func update_units():
@@ -74,7 +88,3 @@ func update_units_position():
 			break
 		$Units.get_child(i).position = units_world_node.get_child(i).position / 2
 
-
-func _on_tree_timer_timeout():
-	clear_group_node($Objects)
-	build_objects(objects_world_node, tree_sprite, $Objects)

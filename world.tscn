@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://k8ftx0qfbnv5"]
+[gd_scene load_steps=12 format=3 uid="uid://k8ftx0qfbnv5"]
 
 [ext_resource type="Script" path="res://UI/Camera.gd" id="1_kjri0"]
 [ext_resource type="Script" path="res://world.gd" id="1_kstvi"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://duvegjudp7c0u" path="res://unit/unit.tscn" id="2_7u3o2"]
 [ext_resource type="PackedScene" uid="uid://dqa0sxgaqcyjp" path="res://World Objects/tree.tscn" id="4_dbqhf"]
 [ext_resource type="PackedScene" uid="uid://bg2ohhatacu6c" path="res://UI/ui.tscn" id="5_v8451"]
+[ext_resource type="Script" path="res://Objects.gd" id="6_enffx"]
 [ext_resource type="PackedScene" uid="uid://d00i3uprabf46" path="res://Houses/barb_house.tscn" id="7_opf4v"]
 [ext_resource type="PackedScene" uid="uid://d2cs3miulx3rf" path="res://Houses/coin_house.tscn" id="7_oyke8"]
 
@@ -47,6 +48,7 @@ position = Vector2(119, 237)
 
 [node name="Objects" type="Node2D" parent="."]
 y_sort_enabled = true
+script = ExtResource("6_enffx")
 
 [node name="Tree" parent="Objects" instance=ExtResource("4_dbqhf")]
 position = Vector2(166, 200)
